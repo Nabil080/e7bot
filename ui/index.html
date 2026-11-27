@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E7 Bot</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<svg width="0" height="0" class="sprite" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M4.5 2.8v10.4L13 8z" fill="currentColor"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-back" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-image" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m3.5 11.5 3-3 2 2 1.5-1.5 2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10.5" cy="6" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 16 16"><path d="M2 4.5c0-.6.4-1 1-1h3l1.5 1.5H13c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-save" viewBox="0 0 16 16"><path d="M8 2.5v7.5m0 0-3-3m3 3 3-3M3 12.5h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 16 16"><path d="M8 1.8 3 3.6v4c0 3 2.1 5.3 5 6.6 2.9-1.3 5-3.6 5-6.6v-4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 16 16"><path d="m4.5 4.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10.2 10.2 3.3 3.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</svg>
+
+<aside class="rail" aria-label="Modes and pages">
+  <button class="brand" id="brand" title="All modes"><b>E7 Bot</b><span id="client-name"></span></button>
+  <nav class="rail-modes" id="rail-modes" aria-label="Modes"></nav>
+  <nav class="rail-pages" id="tabs" role="tablist" aria-label="Pages"></nav>
+  <p class="place" id="place"></p>
+</aside>
+
+<div class="frame">
+  <header class="top" id="band" data-kind="idle" aria-live="polite">
+    <div class="top-title">
+      <h1 id="headline">Starting…</h1>
+      <span class="state" id="kind-label"></span>
+      <span class="badge" id="dry-run-badge" hidden>Dry run</span>
+    </div>
+    <span class="timer" id="timer"></span>
+    <div class="top-actions">
+      <button class="link danger" id="erase" hidden></button>
+      <button class="button" id="restart-admin" hidden><svg class="icon"><use href="#i-shield"/></svg>Restart as administrator</button>
+      <button class="button primary" id="start" disabled><svg class="icon"><use href="#i-play"/></svg>Start</button>
+      <button class="button stop" id="stop" hidden><svg class="icon"><use href="#i-stop"/></svg>Stop</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="tab-page home" id="page-Home" role="tabpanel" aria-labelledby="tab-Home">
+      <div class="home-grid">
+        <div class="col-main">
+          <button class="button quiet back-to-run" id="back-to-run" hidden><span class="live-dot" aria-hidden="true"></span><span id="back-to-run-text"></span></button>
+
+          <article class="slab status" id="status-slab">
+            <div class="slab-label">
+              <span class="cert" id="slab-cert"></span>
+              <div class="subject"><strong id="slab-title"></strong><small id="detail"></small></div>
+              <div class="grade" id="slab-grade-box"><b id="slab-grade"></b><span id="slab-grade-caption"></span></div>
+            </div>
+            <div class="slab-body">
+              <p class="doing" id="doing" hidden></p>
+              <p class="session" id="session" hidden></p>
+              <dl class="figures" id="figures" hidden></dl>
+              <div class="route" id="route" hidden>
+                <div class="route-track"><span class="route-fill" id="route-fill"></span></div>
+                <p id="route-text"></p>
+              </div>
+              <p class="admin-note" id="admin-note" hidden></p>
+              <p class="kept-note" id="kept-note" hidden></p>
+              <button class="button quiet small" id="show-pulls" hidden><svg class="icon"><use href="#i-image"/></svg>Show the pulls</button>
+            </div>
+          </article>
+
+          <div id="menu">
+            <div id="main-modes"></div>
+          </div>
+
+          <div id="mode" hidden>
+            <div class="tabs-inner" id="menu-picker" role="tablist" aria-label="Craft, enhance or sell" hidden></div>
+            <p class="description" id="description"></p>
+            <p class="summary-line" id="summary-line" hidden><span id="summary"></span> <button class="link inline" id="summary-link">Change in Settings ›</button></p>
+            <div id="run" hidden>
+              <h2 class="section">This run</h2>
+              <fieldset class="run-settings" id="run-settings"></fieldset>
+            </div>
+          </div>
+
+          <div id="advice" hidden>
+            <p class="advice-note" id="advice-note" hidden></p>
+            <div class="advice-layout">
+              <div>
+                <h2 class="section">Cards on screen</h2>
+                <div class="advice-grid" id="advice-grid" role="list" aria-label="The cards on screen, as in the game"></div>
+                <p class="hint" id="advice-hint" hidden></p>
+              </div>
+              <section class="piece" id="advice-detail" aria-live="polite"></section>
+            </div>
+          </div>
+
+          <div id="account" hidden>
+            <p class="account-empty" id="account-empty" hidden></p>
+            <div id="account-body">
+              <article class="slab">
+                <div class="slab-label">
+                  <span class="cert">LEVEL</span>
+                  <div class="subject"><strong>Account gear</strong><small id="account-note"></small></div>
+                  <div class="grade"><b id="account-level"></b><span>by median gear score</span></div>
+                </div>
+                <div class="slab-body">
+                  <svg class="account-scale" id="account-scale" viewBox="0 0 360 40" role="img" aria-label="The account's median gear score on the level scale"></svg>
+                  <dl class="figures account-figures" id="account-figures"></dl>
+                </div>
+              </article>
+
+              <div class="account-columns">
+                <section>
+                  <h2 class="section">Pieces per role</h2>
+                  <div class="account-strips" id="account-strips" role="list"></div>
+                  <p class="hint">A tick per +15 piece, by efficiency; the white one is the median.</p>
+                </section>
+                <section>
+                  <h2 class="section">Speed for the openers</h2>
+                  <div class="account-speed" id="account-speed" role="list"></div>
+                  <p class="hint">Bar: your fastest piece; ticks: the next two. The blue line is the target.</p>
+                  <div class="row account-input"><label for="account-openers">Openers to gear</label><input type="number" class="narrow" id="account-openers" min="0" max="50" step="1"></div>
+                </section>
+              </div>
+
+              <h2 class="section">Targets per slot</h2>
+              <div class="account-grid" id="account-grid" role="table" aria-label="Targets per role and slot, in % efficiency"></div>
+              <p class="hint">Each piece fills one seat, in its best role with room: one seat per hero and slot. A new piece is kept when it beats a full role's weakest seat. Dim: seats left empty, your own target stays. 0 heroes follows General.</p>
+              <div class="row account-input"><label for="account-general-heroes">Heroes geared in all (General)</label><input type="number" class="narrow" id="account-general-heroes" min="1" max="1000" step="1"></div>
+
+              <div class="account-buttons">
+                <button class="button" id="account-apply">Apply these targets</button>
+                <button class="link" id="account-clear">Remove applied targets</button>
+              </div>
+              <p class="note" id="account-message" hidden></p>
+
+              <h2 class="section">No hero needs them</h2>
+              <p class="hint" id="account-unneeded-note"></p>
+              <div class="kept-list" id="account-unneeded" role="list"></div>
+
+              <h2 class="section">No longer worth keeping</h2>
+              <p class="hint" id="account-kept-note"></p>
+              <div class="kept-list" id="account-outdated" role="list"></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="col-side">
+          <div id="watch" hidden>
+            <h2 class="section">Events</h2>
+            <ol class="watch-log" id="activity"></ol>
+            <p class="hint" id="activity-empty">Nothing yet: the first events show up here.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tab-page" id="page-Stats" role="tabpanel" aria-labelledby="tab-Stats" hidden>
+      <div class="tabs-inner" id="stats-tabs" role="tablist" aria-label="Statistics by mode"></div>
+      <div id="stats-body"></div>
+      <p class="note">Counted on this PC since each mode was added.</p>
+    </section>
+
+    <section class="tab-page" id="page-Help" role="tabpanel" aria-labelledby="tab-Help" hidden>
+      <div class="tabs-inner" id="help-tabs" role="tablist" aria-label="Help by mode"></div>
+      <ul class="help-steps" id="help-body"></ul>
+    </section>
+
+    <section class="tab-page log-page" id="page-Log" role="tabpanel" aria-labelledby="tab-Log" hidden>
+      <pre class="log" id="log" tabindex="0" aria-label="Log, newest first"></pre>
+      <div class="log-actions">
+        <button class="button quiet" id="export"><svg class="icon"><use href="#i-save"/></svg>Export the log</button>
+        <p class="note" id="export-note"></p>
+      </div>
+    </section>
+
+    <section class="tab-page" id="page-Settings" role="tabpanel" aria-labelledby="tab-Settings" hidden>
+      <div class="tabs-inner" id="settings-tabs" role="tablist" aria-label="Settings by mode"></div>
+      <p class="note running-note" id="settings-locked" hidden>The bot is running: stop it to change the settings.</p>
+      <fieldset class="settings" id="settings-form"></fieldset>
+      <p class="note">Saved as you change them. They apply at the next start.</p>
+    </section>
+  </main>
+</div>
+
+<div class="scrim" id="client-dialog" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="client-title">
+    <h2 id="client-title">Which game client should the bot drive?</h2>
+    <p class="note">You can change it later in Settings, Advanced.</p>
+    <div class="client-choices" id="client-choices"></div>
+  </div>
+</div>
+
+<div class="fatal" id="fatal" hidden>
+  <h1>The window could not reach the bot</h1>
+  <p id="fatal-text"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

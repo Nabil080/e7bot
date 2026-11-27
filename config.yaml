@@ -1,0 +1,175 @@
+# Epic Seven reroll bot configuration. Validated by core/config.py at startup.
+
+
+window:
+  process_name: EpicSeven.exe       # exact match. The Steam build has the same title and class
+  class_names: [GLFW30]             # fallback only, together with titles
+  titles: ['Epic Seven']            # fallback only, exact match
+  excluded_process_names: [STOVE.exe, StoveCefHelper.exe, stove_watchdog.exe, EpicSeven_Steam.exe]
+  client_width: 1280
+  client_height: 720
+  resize_max_attempts: 10
+
+vision:
+  templates_dir: templates
+  manifest: templates/manifest.yaml
+  default_threshold: 0.86
+  template_thresholds:
+    skill_rim: 0.5                  # at least 0.57 with the skills shown, at most 0.48 without
+    speed_x1: 0.75                  # at least 0.94 when shown, at most 0.52 on x2
+    skill_cooldown: 0.6             # at least 0.86 when shown, at most 0.24 otherwise
+    skill_cannot_use: 0.7           # at least 0.87 when shown, at most 0.29 otherwise
+    reset_confirm: 0.985            # 0.973 when disabled, 1.0 when enabled
+    star_card: 0.8                  # a sparkle lowers a star: results are read over several frames
+    star_artifact: 0.8
+    star_single: 0.8
+    mile_essence_icon: 0.7          # 0.76 to 1.0 on the Milestone page, at most 0.37 elsewhere
+    element_moon: 0.7               # 0.86 to 1.0 on Moonlight cards, at most 0.30 on all the others
+    element_sun: 0.7
+    free_all: 0.92                  # 1.0 on 21/21, 0.81 on 20/21
+    skip_icon: 0.9                  # 0.98 when shown, at most 0.51 on any video
+    shop_header_gold: 0.75          # 0.82 to 1.0 in the Secret Shop's top bar, its coin spins
+    shop_header_skystone: 0.75      # 0.89 to 1.0 there
+    title_ready: 0.7                # 0.82 once ready, 0.41 while the screen loads
+  scale_min: 1.0                    # the game is forced to 1280x720, so templates only match at native size
+  scale_max: 1.0
+  scale_step: 0.05
+  ocr_engine: tesseract
+  tesseract_cmd: 'C:\Program Files\Tesseract-OCR\tesseract.exe'
+  ocr_language: eng
+  loading_no_match_seconds: 1.5
+  loading_frame_diff_threshold: 2.0
+
+input:
+  click_hold_ms: {min: 40, max: 120}
+  pre_action_delay_ms: {min: 60, max: 200}
+  jitter_px: 3
+  seed: null                        # set an integer to replay the same random sequence
+  mouse_backend: sendinput          # sendinput | pyautogui, not used in background
+  background: true                  # leave the PC free: the game can be covered and unfocused, not minimized
+  click_marker: false               # show a ring where the bot clicks, in background mode only. The window's Settings page overrides it
+
+watchdog:
+  recover_max_retries: 3
+  recover_wait_seconds: 2.0
+  max_consecutive_reset_failures: 2
+  tick_seconds: 0.05
+  state_timeouts_seconds:
+    BOOT: 30
+    LAUNCH: 180
+    LOGIN: 180
+    STORY: 180                      # without any new screen
+    TUTORIAL_COMBAT: 300
+    POPUP_DISMISS: 20
+    STAGE_SELECT: 60
+    STAGE_LOADING: 90
+    COMBAT_IDLE: 180
+    COMBAT_TARGET: 60
+    COMBAT_RESULT: 60
+    REWARD_COLLECT: 60
+    SUMMON: 120                     # without any new screen
+    RESET_ACCOUNT: 240
+    RECOVER: 30
+    ROUTE: 300                      # without any new screen
+
+popups:
+  preempt_templates: [popup_close, confirm, skip, tap_continue]
+  # Never click a generic Confirm here: it could validate a reset or spend a summon.
+  disabled_states: [RESET_ACCOUNT, SUMMON]
+
+reset:
+  enabled: true                     # the reset deletes the game data of this server for good
+  launch_command: 'C:\Games\EpicSeven\EpicSeven.exe'   # your game's path, only used when the game is not open
+
+reroll:
+  server: Foundry                   # the reset dialog must display this server, or the bot stops
+  skip_hold_seconds: 5.0            # longest hold of Esc to skip a video, about 3 s are enough
+  stop_at_stage:                    # episode name and chapter-stage to hand over at, such as 6th World Episode 2-2. Empty: never
+
+combat:
+  use_auto_battle: true
+  poll_interval_seconds: 0.5
+  enemy_templates: []
+
+summon:
+  # Either rule is enough to keep an account. The window's Settings page overrides both.
+  min_moonlight_5star: 1            # at least this many 5-star Moonlight heroes
+  stop_heroes: []                   # or one of these, named as in data/moonlight_heroes.json
+  expected_pulls: 21                # results to read before an account may be reset
+  event_summons: true               # abyss route: claim and pull the event's free summons
+
+gear:
+  # How the gear modes judge a piece. Defaults for a new account.
+  chase: both                       # speed, score (substats) or both
+  min_speed_speed_set: 18           # speed a speed-set piece must still be able to reach, +15 reforged
+  min_speed_other_sets: 18          # the same on the other sets; an epic piece may try one point lower
+  efficiency: 65                    # % of a perfect piece for its role: a finished piece under the target speed is kept from it; pieces are rolled while their potential reaches it
+  max_level: 15                     # 12 or 15: +15 costs as much as 0 to +12
+  new_bad_action: extract           # extract or sell the fresh pieces that are not worth rolling
+  sell_failed: true                 # sell the enhanced pieces that lost their potential
+  lock_finished: true               # lock the pieces that reach the last level with what was asked
+  flat_main_needs_speed: true       # a flat main stat on necklace, ring or boots stays only with speed
+  stone: great                      # modification stone: always, great (only pieces reaching stone_min_efficiency with it) or never
+  stone_min_efficiency: 100         # "great": the efficiency % a weapon, helmet or armor must reach with the stone
+  stone_min_efficiency_right: 98    # the same for a necklace, ring or boots: lower, a good one is rarer
+  dry_run: false                    # judge every piece and act on none
+  review: false                     # Sort only: tick what would be sold or extracted in Arrange, then stop there
+  screenshots: false                # save a screenshot per screen of cards read and per enhancement tier under logs/gear
+  max_pieces: 0                     # pieces enhanced, sold or extracted in a run, 0 for no limit
+  max_gold_millions: 0              # gold spent on enhancing and crafting in a run, 0 for no limit
+  only_new: false                   # judge only the pieces still at +0
+  craft_hunt: wyvern                # Craft mode: wyvern, golem, banshee, azimanak or caides
+  craft_slot: weapon                # weapon, helmet, armor, necklace, ring or boots
+  craft_pieces: 10                  # pieces to craft, by 10 then by 1
+  craft_then: sort                  # what follows crafting: sort (extract or sell the bad ones, as new_bad_action) or none
+
+story:
+  max_revives: 0                    # skystone revives accepted per lost fight in the story mode, 0 never pays one
+
+theater:
+  buy_tickets: true                 # buy a ticket with 500,000 gold when an act needs one and none is left
+  min_gold_millions: 20             # never buy one with less gold than this, in millions
+  target_acts: 0                    # acts to watch in a run, 0 for every one left
+
+arena:
+  quick_match: true                 # NPC Challenge: Quick Match when the day still has some, a normal auto fight otherwise
+  attack_players: false             # fight the players of the Opponents list instead of the NPCs
+  friendship_refill: false          # out of flags: buy 5 with 100 friendship points (once a day in game)
+  skystone_refill: false            # out of flags: buy 5 with 30 skystones, only to reach target_fights
+  target_fights: 0                  # fights to do in a run, 0 for as long as flags are left (never skystones then)
+
+shop:
+  refreshes: 10                     # Secret Shop refreshes in a run, 3 skystones each; 0 only buys from the shop in view
+  stop_bookmarks: 0                 # stop once this many Covenant Bookmarks are bought in the run, 0 for no target
+  stop_medals: 0                    # stop once this many Mystic Medals are bought in the run, 0 for no target
+
+route: []
+
+logging:
+  log_dir: logs
+  file_level: DEBUG
+  console_level: INFO
+  max_bytes: 5000000
+  backup_count: 5
+  state_screenshots: false          # true writes one PNG per state entry into logs/states/
+
+# Allowed next states. A state returning anything else counts as an unexpected
+# transition. RECOVER and POPUP_DISMISS return to whichever state they interrupted.
+transitions:
+  BOOT: [LAUNCH, LOGIN, RESET_ACCOUNT, RECOVER, HALT]
+  LAUNCH: [LOGIN, RECOVER, HALT]
+  LOGIN: [STORY, TUTORIAL_COMBAT, STAGE_SELECT, POPUP_DISMISS, RESET_ACCOUNT, RECOVER, HALT]
+  STORY: [LOGIN, SUMMON, ROUTE, RESET_ACCOUNT, TUTORIAL_COMBAT, STAGE_SELECT, STAGE_LOADING, POPUP_DISMISS, RECOVER, HALT]
+  TUTORIAL_COMBAT: [STORY, STAGE_LOADING, COMBAT_RESULT, POPUP_DISMISS, RECOVER, HALT]
+  POPUP_DISMISS: [BOOT, LAUNCH, LOGIN, STORY, TUTORIAL_COMBAT, STAGE_SELECT, STAGE_LOADING, COMBAT_IDLE, COMBAT_TARGET, COMBAT_RESULT, REWARD_COLLECT, SUMMON, RESET_ACCOUNT, RECOVER, HALT]
+  STAGE_SELECT: [STAGE_LOADING, STORY, POPUP_DISMISS, RECOVER, HALT]
+  STAGE_LOADING: [COMBAT_IDLE, STORY, TUTORIAL_COMBAT, POPUP_DISMISS, RECOVER, HALT]
+  COMBAT_IDLE: [COMBAT_TARGET, COMBAT_RESULT, STORY, POPUP_DISMISS, RECOVER, HALT]
+  COMBAT_TARGET: [COMBAT_IDLE, COMBAT_RESULT, POPUP_DISMISS, RECOVER, HALT]
+  COMBAT_RESULT: [REWARD_COLLECT, STAGE_SELECT, STORY, POPUP_DISMISS, RECOVER, HALT]
+  REWARD_COLLECT: [STAGE_SELECT, STORY, POPUP_DISMISS, RECOVER, HALT]
+  SUMMON: [RESET_ACCOUNT, ROUTE, RECOVER, HALT]
+  ROUTE: [STORY, SUMMON, RESET_ACCOUNT, RECOVER, HALT]
+  RESET_ACCOUNT: [LOGIN, STORY, RECOVER, HALT]
+  RECOVER: [BOOT, LAUNCH, LOGIN, STORY, TUTORIAL_COMBAT, POPUP_DISMISS, STAGE_SELECT, STAGE_LOADING, COMBAT_IDLE, COMBAT_TARGET, COMBAT_RESULT, REWARD_COLLECT, SUMMON, ROUTE, RESET_ACCOUNT, HALT]
+  HALT: []

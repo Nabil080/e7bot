@@ -1,0 +1,15 @@
+# Runtime
+pywin32==312            # window lookup, styles and process queries
+mss==10.2.0             # client-rect screen capture
+opencv-python==5.0.0.93 # template matching and screenshot encoding
+numpy==2.4.6            # frame arrays
+pytesseract==0.3.13     # OCR text gates (needs the Tesseract binary)
+PyDirectInput==1.0.4    # keyboard input
+PyAutoGUI==0.9.54       # optional mouse fallback, gated by config
+PyYAML==6.0.3           # config and accounts files
+pydantic==2.14.2        # config validation
+pywebview==6.2.1        # the bot window: ui/ shown in Edge WebView2 (brings pythonnet, bottle, proxy_tools)
+
+# Dev
+pytest==9.2.0
+pyinstaller==6.16.0     # tools/package.py only: builds E7Bot.exe for a PC without Python

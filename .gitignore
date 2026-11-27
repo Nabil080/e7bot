@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local secrets and runtime state
+accounts.yaml
+state.json
+state_*.json
+settings.json
+logs/
+
+# Packaging output
+build/
+dist/
+

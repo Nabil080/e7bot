@@ -1,0 +1,1710 @@
+templates:
+- name: popup_close
+  description: X button closing a popup
+- name: confirm
+  description: generic confirm button
+- name: skip
+  description: skip button for dialogue and cutscenes
+- name: tap_continue
+  description: tap to continue prompt
+- name: back_button
+  description: back arrow used by RECOVER
+- name: title_screen
+  state: LAUNCH
+  description: element only visible on the title screen
+  region:
+  - 1048
+  - 26
+  - 206
+  - 40
+- name: lobby_menu
+  state: LOGIN
+  description: menu icon in the lobby, hidden after a while
+  region:
+  - 1222
+  - 14
+  - 40
+  - 40
+- name: menu_settings
+  state: RESET_ACCOUNT
+  description: settings gear in the open menu
+  region:
+  - 1198
+  - 570
+  - 40
+  - 40
+- name: settings_header
+  state: RESET_ACCOUNT
+  description: back arrow and title of the settings
+  region:
+  - 20
+  - 14
+  - 145
+  - 40
+- name: settings_reset_server
+  state: RESET_ACCOUNT
+  description: Reset Server button
+  region:
+  - 1046
+  - 488
+  - 202
+  - 52
+- name: reset_dialog_title
+  state: RESET_ACCOUNT
+  description: title of the reset dialog
+  region:
+  - 545
+  - 140
+  - 190
+  - 38
+- name: reset_cancel
+  state: RESET_ACCOUNT
+  description: Cancel in the reset dialog
+  region:
+  - 434
+  - 513
+  - 198
+  - 60
+- name: reset_confirm
+  state: RESET_ACCOUNT
+  description: Confirm once enabled
+  region:
+  - 648
+  - 513
+  - 198
+  - 60
+- name: reset_final_body
+  state: RESET_ACCOUNT
+  description: text of the final reset dialog
+  region:
+  - 488
+  - 333
+  - 306
+  - 28
+- name: reset_final_confirm
+  state: RESET_ACCOUNT
+  description: Confirm in the final reset dialog
+  region:
+  - 649
+  - 465
+  - 198
+  - 60
+- name: select_server
+  state: LOGIN
+  description: title of the Select Server screen
+  region:
+  - 545
+  - 72
+  - 190
+  - 40
+- name: skip_confirm_text
+  state: STORY
+  description: question of the skip popup
+  region:
+  - 465
+  - 312
+  - 350
+  - 26
+- name: letter_close
+  state: STORY
+  description: Tap to close under the event letter
+  region:
+  - 580
+  - 683
+  - 118
+  - 22
+- name: event_stamp
+  state: STORY
+  description: unclaimed gift on the event letter
+  region:
+  - 612
+  - 443
+  - 54
+  - 50
+- name: reward_title
+  state: STORY
+  description: title of the reward popup
+  region:
+  - 515
+  - 150
+  - 250
+  - 38
+- name: skip_tutorial
+  state: STORY
+  description: Skip Tutorial button in the lobby
+  region:
+  - 1092
+  - 18
+  - 140
+  - 32
+- name: episode
+  state: STAGE_SELECT
+  description: Episode label in the lobby
+  region:
+  - 1128
+  - 168
+  - 108
+  - 36
+- name: title_ready
+  state: LOGIN
+  description: server button, shown once the title screen has loaded
+  region:
+  - 1100
+  - 637
+  - 60
+  - 44
+- name: skip_icon
+  state: STORY
+  description: icon shown while a video is being skipped
+  region:
+  - 618
+  - 338
+  - 44
+  - 44
+- name: skip_story
+  state: STORY
+  description: Skip at the top right of a dialogue
+  region:
+  - 1190
+  - 24
+  - 66
+  - 28
+- name: tap_to_close
+  state: STORY
+  description: Tap to close under a reward
+  region:
+  - 584
+  - 470
+  - 112
+  - 24
+- name: clear_banner
+  state: STORY
+  description: CLEAR at the end of a stage
+  region:
+  - 536
+  - 420
+  - 250
+  - 40
+- name: result_confirm
+  state: STORY
+  description: Confirm on the results screen
+  region:
+  - 1110
+  - 644
+  - 128
+  - 32
+- name: stage_ready
+  state: STORY
+  description: Ready button of a battle stage
+  region:
+  - 1070
+  - 646
+  - 90
+  - 32
+- name: view_story
+  state: STORY
+  description: View Story button of a story stage
+  region:
+  - 1060
+  - 646
+  - 112
+  - 32
+- name: episode_select
+  state: STORY
+  description: title of Select Episode, opened by the tree button of the stage list
+  region:
+  - 66
+  - 18
+  - 170
+  - 34
+- name: story_pin
+  state: STORY
+  description: pin marking where the story stands, on an episode row (blue, or orange for the world episode) and on a chapter card
+  region:
+  - 40
+  - 561
+  - 20
+  - 25
+- name: story_failed
+  state: STORY
+  description: FAILED title of a lost story stage, in the middle of the screen
+  region:
+  - 524
+  - 284
+  - 232
+  - 28
+- name: start_quest
+  state: STORY
+  description: Start Quest on the team screen
+  region:
+  - 1096
+  - 646
+  - 104
+  - 32
+- name: ok_button
+  state: STORY
+  description: OK when a hero joins
+  region:
+  - 622
+  - 500
+  - 36
+  - 28
+- name: hourglass
+  state: STORY
+  description: hourglass shown only during a fight
+  region:
+  - 22
+  - 65
+  - 22
+  - 24
+- name: skill_rim
+  state: STORY
+  description: left edge of the first skill, shown on our turn
+  region:
+  - 971
+  - 645
+  - 10
+  - 40
+- name: pause_hud
+  state: STORY
+  description: pause icon, shown inside a stage
+  region:
+  - 1238
+  - 24
+  - 24
+  - 30
+- name: story_log
+  state: STORY
+  description: log icon shown during story scenes
+  region:
+  - 1082
+  - 24
+  - 34
+  - 26
+- name: quit_popup
+  state: STORY
+  description: question of the quit game popup
+  region:
+  - 462
+  - 310
+  - 356
+  - 28
+- name: hero_add
+  state: STORY
+  description: gold plus on a hero in the team's hero list
+  region:
+  - 946
+  - 258
+  - 36
+  - 36
+- name: slot_plus
+  state: STORY
+  description: purple plus on an empty team slot once a hero is picked
+  region:
+  - 548
+  - 330
+  - 36
+  - 36
+- name: rank_up
+  state: STORY
+  description: RANK UP over the new rank
+  region:
+  - 598
+  - 210
+  - 82
+  - 22
+- name: travel_bar
+  state: STORY
+  description: bag icon, this low only while the minimap shows
+  region:
+  - 32
+  - 138
+  - 24
+  - 24
+- name: skill_cannot_use
+  state: STORY
+  description: Cannot use, over a skill on cooldown
+  region:
+  - 1094
+  - 645
+  - 58
+  - 22
+- name: pause_menu
+  state: STORY
+  description: title of the menu Esc opens during a fight
+  region:
+  - 596
+  - 174
+  - 88
+  - 34
+- name: yield_popup
+  state: STORY
+  description: warning before yielding a fight
+  region:
+  - 440
+  - 292
+  - 400
+  - 62
+- name: tag_hint
+  state: STORY
+  description: bubble asking to change heroes with Tag
+  region:
+  - 258
+  - 634
+  - 250
+  - 30
+- name: summon_lock
+  state: STORY
+  description: lock beside Summon in the lobby, gone once it is unlocked
+  region:
+  - 1246
+  - 446
+  - 18
+  - 20
+- name: event_icon
+  state: SUMMON
+  description: Event entry on the lobby
+  region:
+  - 34
+  - 354
+  - 46
+  - 22
+- name: summon_entry
+  state: SUMMON
+  description: Summon entry on the lobby
+  region:
+  - 1142
+  - 442
+  - 96
+  - 28
+- name: event_header
+  state: SUMMON
+  description: title of the event menu
+  region:
+  - 66
+  - 18
+  - 66
+  - 32
+- name: summon_header
+  state: SUMMON
+  description: title of the summon menu
+  region:
+  - 66
+  - 18
+  - 104
+  - 32
+- name: support_tab
+  state: SUMMON
+  description: Summon Support in the event list, not selected
+  region:
+  - 24
+  - 436
+  - 178
+  - 28
+- name: support_title
+  state: SUMMON
+  description: title of the Summon Support event
+  region:
+  - 1022
+  - 195
+  - 222
+  - 46
+- name: support_book_done
+  state: SUMMON
+  description: check mark on the claimed free summons
+  region:
+  - 1062
+  - 478
+  - 50
+  - 40
+- name: reveal_skip
+  state: SUMMON
+  description: Skip while an x10 reveals its results
+  region:
+  - 1192
+  - 22
+  - 62
+  - 28
+- name: reveal_next
+  state: SUMMON
+  description: Next after a rare x10 result
+  region:
+  - 1072
+  - 648
+  - 100
+  - 28
+- name: summon_results
+  state: SUMMON
+  description: title of the x10 results
+  region:
+  - 30
+  - 36
+  - 282
+  - 36
+- name: again_free
+  state: SUMMON
+  description: Free label on Summon Again
+  region:
+  - 990
+  - 650
+  - 46
+  - 26
+- name: result_back
+  state: SUMMON
+  description: Back on a summon result
+  region:
+  - 128
+  - 648
+  - 56
+  - 26
+- name: covenant_tab
+  state: SUMMON
+  description: Covenant Summon tab, selected
+  region:
+  - 62
+  - 620
+  - 120
+  - 44
+- name: wish_empty
+  state: SUMMON
+  description: wish list counter at 0/14
+  region:
+  - 742
+  - 546
+  - 62
+  - 24
+- name: free_x1
+  state: SUMMON
+  description: Free label on Summon x1
+  region:
+  - 808
+  - 650
+  - 44
+  - 24
+- name: free_x10
+  state: SUMMON
+  description: Free label on Summon x10
+  region:
+  - 1060
+  - 650
+  - 44
+  - 24
+- name: free_all
+  state: SUMMON
+  description: 21/21 in the free summons bubble
+  region:
+  - 1150
+  - 600
+  - 58
+  - 20
+- name: wish_title
+  state: SUMMON
+  description: title of the wish list
+  region:
+  - 116
+  - 52
+  - 218
+  - 36
+- name: wish_slot_empty
+  state: SUMMON
+  description: plus on the first wish list slot
+  region:
+  - 150
+  - 200
+  - 42
+  - 42
+- name: wish_apply
+  state: SUMMON
+  description: Apply Recommended List
+  region:
+  - 262
+  - 610
+  - 184
+  - 24
+- name: wish_confirm
+  state: SUMMON
+  description: question before applying the recommended list
+  region:
+  - 432
+  - 312
+  - 416
+  - 28
+- name: star_card
+  state: SUMMON
+  description: star on a hero card of the x10 results
+  region:
+  - 118
+  - 459
+  - 18
+  - 18
+- name: star_artifact
+  state: SUMMON
+  description: star on an artifact card
+  region:
+  - 585
+  - 383
+  - 15
+  - 18
+- name: star_single
+  state: SUMMON
+  description: star beside a hero's name on one result
+  region:
+  - 238
+  - 84
+  - 24
+  - 24
+- name: notice_avatar
+  state: SUMMON
+  description: face on the notice bubble that floats over any screen, with either
+    message
+  region:
+  - 372
+  - 122
+  - 40
+  - 40
+- name: notice_question
+  state: SUMMON
+  description: question before turning the notices off
+  region:
+  - 347
+  - 300
+  - 586
+  - 26
+- name: artifact_details
+  state: SUMMON
+  description: Preview max level on the details of an artifact
+  region:
+  - 755
+  - 62
+  - 160
+  - 24
+- name: buy_bookmarks
+  state: SUMMON
+  description: title of the window selling bookmarks for Skystones
+  region:
+  - 489
+  - 84
+  - 304
+  - 32
+- name: date_changed
+  state: SUMMON
+  description: title of the popup shown when the game's day changes
+  region:
+  - 540
+  - 204
+  - 202
+  - 36
+- name: connection_error
+  state: STORY
+  description: connection error popup, closed by a tap to retry
+  region:
+  - 388
+  - 312
+  - 505
+  - 26
+- name: patch_update
+  state: STORY
+  description: title of the popup offering a game patch
+  region:
+  - 535
+  - 135
+  - 210
+  - 35
+- name: element_moon
+  state: SUMMON
+  description: dark Moonlight element on a hero card
+  region:
+  - 46
+  - 9
+  - 30
+  - 30
+- name: element_sun
+  state: SUMMON
+  description: light Moonlight element on a hero card
+  region:
+  - 46
+  - 9
+  - 30
+  - 30
+- name: skill_cooldown
+  state: STORY
+  description: turn(s) written on a skill recharging
+  region:
+  - 1102
+  - 654
+  - 56
+  - 20
+- name: go_to_summon
+  state: STORY
+  description: Go to Summon on the announcement of a new hero, shown for any hero
+  region:
+  - 1072
+  - 576
+  - 144
+  - 30
+- name: speed_x1
+  state: STORY
+  description: battle speed button while the speed is x1
+  region:
+  - 1058
+  - 18
+  - 30
+  - 32
+- name: auto_assign
+  state: STORY
+  description: title of the popup offering to fill new team slots
+  region:
+  - 552
+  - 200
+  - 176
+  - 40
+- name: menu_recruit
+  state: ROUTE
+  description: Recruit entry of the main menu
+  region:
+  - 1160
+  - 278
+  - 90
+  - 30
+- name: blessing_card
+  state: ROUTE
+  description: Moonlight's Blessing card on the Recruit page
+  region:
+  - 535
+  - 120
+  - 220
+  - 30
+- name: blessing_vildred
+  state: ROUTE
+  description: Arbiter Vildred shown on the Moonlight's Blessing page
+  region:
+  - 30
+  - 128
+  - 190
+  - 36
+- name: blessing_confirm
+  state: ROUTE
+  description: popup confirming the Moonlight's Blessing hero
+  region:
+  - 500
+  - 138
+  - 272
+  - 34
+- name: blessing_done
+  state: ROUTE
+  description: Reset Moonlight's Blessing button, shown once a hero is taken, never clicked
+  region:
+  - 1000
+  - 104
+  - 220
+  - 30
+- name: hero_search
+  state: ROUTE
+  description: Search button of the hero page
+  region:
+  - 925
+  - 78
+  - 100
+  - 28
+- name: hero_search_go
+  state: ROUTE
+  description: green Search button of the hero search popup
+  region:
+  - 990
+  - 135
+  - 90
+  - 30
+- name: hero_search_results
+  state: ROUTE
+  description: Search Results label under the hero search field
+  region:
+  - 655
+  - 206
+  - 130
+  - 26
+- name: hero_name_vildred
+  state: ROUTE
+  description: Arbiter Vildred as the hero page title
+  region:
+  - 104
+  - 114
+  - 250
+  - 38
+- name: hero_name_landy
+  state: ROUTE
+  description: Landy as the hero page title
+  region:
+  - 104
+  - 114
+  - 120
+  - 38
+- name: hero_level_max
+  state: ROUTE
+  description: Lv. Max on the hero page
+  region:
+  - 104
+  - 192
+  - 100
+  - 30
+- name: hero_level_up
+  state: ROUTE
+  description: Level Up label on the hero page
+  region:
+  - 596
+  - 670
+  - 62
+  - 24
+- name: level_auto_select
+  state: ROUTE
+  description: Auto Select button of the level up page
+  region:
+  - 1040
+  - 648
+  - 110
+  - 26
+- name: level_success
+  state: ROUTE
+  description: Level Up Success popup
+  region:
+  - 530
+  - 155
+  - 190
+  - 36
+- name: hero_awaken
+  state: ROUTE
+  description: Awaken label on the hero page
+  region:
+  - 808
+  - 670
+  - 60
+  - 24
+- name: awaken_button
+  state: ROUTE
+  description: green Awaken button of the awakening page
+  region:
+  - 1050
+  - 648
+  - 116
+  - 28
+- name: awaken_use_chest
+  state: ROUTE
+  description: Use Chest button of an awakening node
+  region:
+  - 1050
+  - 648
+  - 116
+  - 28
+- name: item_exchange
+  state: ROUTE
+  description: Item Exchange popup turning selection chests into runes
+  region:
+  - 290
+  - 88
+  - 150
+  - 32
+- name: awakening_reward
+  state: ROUTE
+  description: Awakening Reward popup
+  region:
+  - 416
+  - 152
+  - 250
+  - 36
+- name: battle_spirit_altar
+  state: ROUTE
+  description: Spirit Altar card on the Battle page
+  region:
+  - 75
+  - 188
+  - 110
+  - 26
+- name: altar_dark_easy
+  state: ROUTE
+  description: Dark Spirit Altar - Easy in the altar list
+  region:
+  - 790
+  - 170
+  - 180
+  - 24
+- name: ready_dark_altar
+  state: ROUTE
+  description: Dark Spirit Altar title on its team screen
+  region:
+  - 925
+  - 78
+  - 150
+  - 22
+- name: ready_start
+  state: ROUTE
+  description: Start button of a team screen
+  region:
+  - 1090
+  - 644
+  - 70
+  - 28
+- name: ready_quick
+  state: ROUTE
+  description: Quick Battling button of the altar team screen
+  region:
+  - 1095
+  - 640
+  - 85
+  - 36
+- name: quick_done
+  state: ROUTE
+  description: Quick Battling Complete popup
+  region:
+  - 585
+  - 148
+  - 235
+  - 22
+- name: quick_progress
+  state: ROUTE
+  description: Quick Battling in Progress popup
+  region:
+  - 630
+  - 150
+  - 200
+  - 22
+- name: quick_buy_title
+  state: ROUTE
+  description: Purchase Quick Battling chances popup
+  region:
+  - 540
+  - 145
+  - 200
+  - 26
+- name: quick_buy_price
+  state: ROUTE
+  description: Buy button priced 50 skystones
+  region:
+  - 630
+  - 495
+  - 250
+  - 30
+- name: fight_mvp_confirm
+  state: ROUTE
+  description: Confirm button of the fight results with the MVP
+  region:
+  - 1125
+  - 648
+  - 90
+  - 26
+- name: fight_leave
+  state: ROUTE
+  description: Leave button after a fight
+  region:
+  - 90
+  - 646
+  - 75
+  - 28
+- name: mile_splash
+  state: ROUTE
+  description: Obtainable Benefits splash of Milestone of Radiance
+  region:
+  - 520
+  - 558
+  - 240
+  - 24
+- name: mile_title
+  state: ROUTE
+  description: Milestone of Radiance page title
+  region:
+  - 66
+  - 20
+  - 250
+  - 28
+- name: mile_pick
+  state: ROUTE
+  description: Please select a Hero to summon, on a 3 hero chest
+  region:
+  - 700
+  - 642
+  - 180
+  - 24
+- name: mile_selector
+  state: ROUTE
+  description: Use Selector popup confirming the chosen hero
+  region:
+  - 560
+  - 184
+  - 160
+  - 28
+- name: mile_obtained
+  state: ROUTE
+  description: Obtained button after a chest hero
+  region:
+  - 60
+  - 640
+  - 190
+  - 42
+- name: exchange_speed_crit
+  state: ROUTE
+  description: Speed/Critical equipment set in the Dawning Trajectory exchange
+  region:
+  - 512
+  - 164
+  - 180
+  - 22
+- name: exchange_buy_set
+  state: ROUTE
+  description: buy popup naming the Speed/Critical set
+  region:
+  - 640
+  - 364
+  - 280
+  - 22
+- name: exchange_buy_price
+  state: ROUTE
+  description: Buy button priced 60 coins
+  region:
+  - 610
+  - 494
+  - 290
+  - 30
+- name: received_reward
+  state: ROUTE
+  description: Received Reward popup
+  region:
+  - 540
+  - 152
+  - 200
+  - 30
+- name: equip_all
+  state: ROUTE
+  description: Equip All label on the equipment tab
+  region:
+  - 600
+  - 672
+  - 66
+  - 20
+- name: equip_all_popup
+  state: ROUTE
+  description: Equip All popup
+  region:
+  - 585
+  - 44
+  - 110
+  - 30
+- name: equip_change
+  state: ROUTE
+  description: Change popup confirming new equipment
+  region:
+  - 595
+  - 166
+  - 90
+  - 30
+- name: hero_speed_set
+  state: ROUTE
+  description: Speed Set shown on an equipped hero
+  region:
+  - 140
+  - 628
+  - 100
+  - 22
+- name: battle_abyss
+  state: ROUTE
+  description: Abyss card on the Battle page
+  region:
+  - 400
+  - 190
+  - 80
+  - 24
+- name: abyss_progress
+  state: ROUTE
+  description: Progress label of the Abyss page
+  region:
+  - 1100
+  - 92
+  - 80
+  - 22
+- name: ready_abyss
+  state: ROUTE
+  description: Abyss title on its team screen
+  region:
+  - 940
+  - 78
+  - 60
+  - 22
+- name: team_empty
+  state: ROUTE
+  description: Team CP 0 of an empty team
+  region:
+  - 250
+  - 632
+  - 110
+  - 60
+- name: row_vildred
+  state: ROUTE
+  description: Arbiter Vildred in the team hero list
+  region:
+  - 1060
+  - 252
+  - 120
+  - 22
+- name: row_landy
+  state: ROUTE
+  description: Landy in the team hero list
+  region:
+  - 1040
+  - 250
+  - 70
+  - 22
+- name: abyss_next
+  state: ROUTE
+  description: Next Floor button after an Abyss floor
+  region:
+  - 1130
+  - 640
+  - 110
+  - 42
+- name: abyss_failed
+  state: ROUTE
+  description: FAILED title after a lost fight
+  region:
+  - 740
+  - 142
+  - 170
+  - 32
+- name: list_plus
+  state: ROUTE
+  description: yellow plus next to the chosen hero in the team list
+  region:
+  - 940
+  - 244
+  - 40
+  - 40
+- name: row_vildred_plain
+  state: ROUTE
+  description: Arbiter Vildred in the team hero list, not highlighted
+  region:
+  - 1070
+  - 194
+  - 110
+  - 22
+- name: team_list
+  state: ROUTE
+  description: Search button of the hero list opened on a team screen
+  region:
+  - 1195
+  - 84
+  - 60
+  - 22
+- name: menu_reputation
+  state: ROUTE
+  description: Reputation entry of the main menu
+  region:
+  - 905
+  - 512
+  - 95
+  - 26
+- name: reputation_title
+  state: ROUTE
+  description: Reputation page title
+  region:
+  - 66
+  - 20
+  - 130
+  - 30
+- name: rep_popup
+  state: ROUTE
+  description: Achievement Reward Received popup
+  region:
+  - 520
+  - 128
+  - 240
+  - 30
+- name: epic_pass_title
+  state: ROUTE
+  description: Epic Pass page title
+  region:
+  - 66
+  - 20
+  - 110
+  - 30
+- name: pass_buy_name
+  state: ROUTE
+  description: Premium Epic Pass in the buy popup
+  region:
+  - 640
+  - 338
+  - 180
+  - 26
+- name: pass_buy_price
+  state: ROUTE
+  description: Buy button priced 1,900 skystones
+  region:
+  - 610
+  - 495
+  - 290
+  - 30
+- name: pass_rank_complete
+  state: ROUTE
+  description: Season Rank Purchase Complete popup
+  region:
+  - 520
+  - 196
+  - 250
+  - 30
+- name: pass_unlocked
+  state: ROUTE
+  description: Content Unlocked popup
+  region:
+  - 560
+  - 178
+  - 160
+  - 30
+- name: orbis_title
+  state: ROUTE
+  description: Orbis Guide window title
+  region:
+  - 66
+  - 66
+  - 150
+  - 34
+- name: diary_popup
+  state: ROUTE
+  description: Reputation Point Rewards popup of the diary
+  region:
+  - 450
+  - 150
+  - 380
+  - 34
+- name: covenant_wish
+  state: ROUTE
+  description: Wish List button of Covenant Summon
+  region:
+  - 650
+  - 545
+  - 85
+  - 26
+- name: summon_x10_title
+  state: ROUTE
+  description: Summon x10 confirm popup
+  region:
+  - 540
+  - 128
+  - 200
+  - 50
+- name: bookmark_chronicle
+  state: ROUTE
+  description: Chronicle Bookmark icon in the summon confirm popup
+  region:
+  - 518
+  - 322
+  - 84
+  - 84
+- name: bookmark_covenant
+  state: ROUTE
+  description: Covenant Bookmark icon in the summon confirm popup
+  region:
+  - 518
+  - 322
+  - 84
+  - 84
+- name: mail_energy
+  state: ROUTE
+  description: energy icon of a mail
+  region:
+  - 945
+  - 110
+  - 70
+  - 50
+- name: mail_chest_20
+  state: ROUTE
+  description: rune selection chest icon (20) of a mail
+  region:
+  - 945
+  - 485
+  - 70
+  - 50
+- name: mail_chest_40
+  state: ROUTE
+  description: rune selection chest icon (40) of a mail
+  region:
+  - 945
+  - 365
+  - 70
+  - 50
+- name: mail_chest_60
+  state: ROUTE
+  description: rune selection chest icon (60) of a mail
+  region:
+  - 945
+  - 490
+  - 70
+  - 50
+- name: mail_chest_75
+  state: ROUTE
+  description: rune selection chest icon (75) of a mail
+  region:
+  - 945
+  - 245
+  - 70
+  - 50
+- name: mail_chest_90
+  state: ROUTE
+  description: rune selection chest icon (90) of a mail
+  region:
+  - 945
+  - 370
+  - 70
+  - 50
+- name: mail_chest_180
+  state: ROUTE
+  description: rune selection chest icon (180) of a mail
+  region:
+  - 945
+  - 495
+  - 70
+  - 50
+- name: mail_penguin_60
+  state: ROUTE
+  description: epic penguin icon of a mail
+  region:
+  - 945
+  - 250
+  - 70
+  - 50
+- name: mail_penguin_10
+  state: ROUTE
+  description: penguin icon of a mail
+  region:
+  - 945
+  - 500
+  - 70
+  - 50
+- name: mailbox_title
+  state: ROUTE
+  description: Mailbox page title
+  region:
+  - 60
+  - 18
+  - 110
+  - 32
+- name: mail_letter
+  state: ROUTE
+  description: Receive button of a letter mail opened in a popup
+  region:
+  - 503
+  - 524
+  - 277
+  - 52
+- name: awaken_locked
+  state: ROUTE
+  description: Hero Awakening popup saying awakening is still locked
+  region:
+  - 520
+  - 200
+  - 240
+  - 40
+- name: fight_clear
+  state: ROUTE
+  description: CLEAR title at the end of a won fight
+  region:
+  - 530
+  - 272
+  - 230
+  - 36
+- name: abyss_select_team
+  state: ROUTE
+  description: Select Team button of the Abyss floor list
+  region:
+  - 1060
+  - 646
+  - 125
+  - 30
+- name: no_better_equipment
+  state: ROUTE
+  description: There is no better Equipment message
+  region:
+  - 520
+  - 658
+  - 240
+  - 26
+- name: row_landy_face
+  state: ROUTE
+  description: Landy's portrait in the team hero list
+  region:
+  - 1175
+  - 318
+  - 95
+  - 45
+- name: place_plus
+  state: ROUTE
+  description: purple plus marking a free place in the team
+  region:
+  - 530
+  - 320
+  - 56
+  - 56
+- name: summon_free
+  state: ROUTE
+  description: Free badge on Covenant Summon x1
+  region:
+  - 808
+  - 648
+  - 48
+  - 28
+- name: bottom_tap_to_close
+  state: ROUTE
+  description: Tap to close at the bottom of a popup, such as the paid First Pack offer
+  region:
+  - 582
+  - 685
+  - 118
+  - 24
+- name: mile_essence_icon
+  state: ROUTE
+  description: Radiance essence icon in the Milestone top bar
+  region:
+  - 840
+  - 20
+  - 18
+  - 28
+- name: row_landy_plain
+  state: ROUTE
+  description: Landy in the team hero list, not highlighted
+  region:
+  - 1054
+  - 186
+  - 52
+  - 22
+- name: abyss_statistics
+  state: ROUTE
+  description: Statistics button of the Abyss floor list, there while it scrolls
+  region:
+  - 600
+  - 648
+  - 110
+  - 28
+- name: friend_request
+  state: STORY
+  description: friend request popup after a support friend's help, closed with Cancel
+  region:
+  - 445
+  - 238
+  - 390
+  - 48
+- name: battle_guide_skip
+  state: STORY
+  description: Do Not Display button of the Battle Guide popup shown before a much stronger enemy, clicked to fight
+  region:
+  - 782
+  - 516
+  - 142
+  - 32
+- name: inventory_full
+  state: STORY
+  description: Insufficient Inventory popup, the game refuses to start a fight
+  region:
+  - 480
+  - 200
+  - 320
+  - 46
+- name: energy_title
+  state: STORY
+  description: Insufficient Energy popup over the team screen
+  region:
+  - 505
+  - 140
+  - 270
+  - 45
+- name: energy_leaf
+  state: STORY
+  description: leaf option of the Insufficient Energy popup
+  region:
+  - 398
+  - 322
+  - 62
+  - 56
+- name: theater_tile
+  state: ROUTE
+  description: Moonlight Theater tile of the Side Story screen
+  region:
+  - 1068
+  - 350
+  - 190
+  - 34
+- name: theater_prologue
+  state: ROUTE
+  description: Prologue button, only on the Moonlight Theater carousel
+  region:
+  - 30
+  - 624
+  - 152
+  - 44
+- name: theater_cast_board
+  state: ROUTE
+  description: Cast Board button of a Moonlight Theater story, where its acts are listed
+  region:
+  - 48
+  - 640
+  - 264
+  - 54
+- name: theater_ticket_icon
+  state: ROUTE
+  description: ticket on the Watch button, the selected act needs a Theater Ticket
+  region:
+  - 648
+  - 648
+  - 42
+  - 34
+- name: theater_film_icon
+  state: ROUTE
+  description: film reel on the Watch button, the selected act is free
+  region:
+  - 652
+  - 648
+  - 42
+  - 34
+- name: theater_no_skip
+  state: ROUTE
+  description: notification that Moonlight Theater stories cannot be skipped
+  region:
+  - 336
+  - 334
+  - 612
+  - 52
+- name: theater_use_ticket
+  state: ROUTE
+  description: Use Theater Ticket popup
+  region:
+  - 505
+  - 134
+  - 270
+  - 42
+- name: theater_purchase
+  state: ROUTE
+  description: Purchase Theater Ticket popup
+  region:
+  - 476
+  - 106
+  - 330
+  - 44
+- name: theater_buy_ticket
+  state: ROUTE
+  description: Theater Ticket name in the Buy confirmation
+  region:
+  - 646
+  - 366
+  - 140
+  - 32
+- name: theater_gold_buy
+  state: ROUTE
+  description: gold coin on the Buy button of the ticket purchase, never anything else
+  region:
+  - 596
+  - 570
+  - 40
+  - 40
+- name: theater_gold_confirm
+  state: ROUTE
+  description: gold coin on the Buy button of the ticket confirmation
+  region:
+  - 594
+  - 512
+  - 40
+  - 40
+- name: theater_reward
+  state: ROUTE
+  description: Receive Reward popup of Moonlight Theater
+  region:
+  - 526
+  - 148
+  - 230
+  - 42
+- name: theater_dialogue_log
+  state: ROUTE
+  description: story log icon of a Moonlight Theater dialogue, absent from fights
+  region:
+  - 1168
+  - 18
+  - 44
+  - 40
+- name: arena_hub
+  state: ROUTE
+  description: Rookie Arena card of the Arena screen
+  region:
+  - 392
+  - 652
+  - 160
+  - 36
+- name: arena_opponents_tab
+  state: ROUTE
+  description: Opponents tab of the Rookie Arena menu
+  region:
+  - 1070
+  - 100
+  - 120
+  - 36
+- name: arena_npc_header
+  state: ROUTE
+  description: NPC Challenge header of the Rookie Arena
+  region:
+  - 298
+  - 100
+  - 186
+  - 36
+- name: arena_team_cp
+  state: ROUTE
+  description: Team CP label of the arena team screen
+  region:
+  - 494
+  - 524
+  - 104
+  - 24
+- name: arena_victory
+  state: ROUTE
+  description: VICTORY title after an arena fight
+  region:
+  - 470
+  - 215
+  - 365
+  - 65
+- name: arena_quick_victory
+  state: ROUTE
+  description: Victory title after an arena quick match
+  region:
+  - 490
+  - 135
+  - 300
+  - 75
+- name: arena_confirm
+  state: ROUTE
+  description: Confirm button text after an arena fight
+  region:
+  - 1128
+  - 645
+  - 84
+  - 28
+- name: arena_flag_purchase
+  state: ROUTE
+  description: Purchase Flags title of the arena flag refill popup
+  region:
+  - 532
+  - 140
+  - 216
+  - 44
+- name: arena_friendship_offer
+  state: ROUTE
+  description: Friendship heart of the flag refill offer paid in friendship points
+  region:
+  - 396
+  - 318
+  - 70
+  - 70
+
+- name: arena_skystone_offer
+  state: ROUTE
+  description: Skystone of the flag refill offer paid in skystones
+  region:
+  - 684
+  - 318
+  - 70
+  - 70
+- name: story_revive_title
+  state: STORY
+  description: title of the popup offering a skystone revive after a lost story fight
+- name: story_revive_skystone
+  state: STORY
+  description: skystone icon on the Revive button of that popup, clicked to revive
+- name: story_revive_give_up
+  state: STORY
+  description: Give up button of that popup, clicked to decline the revive
+- name: lobby_secret_shop
+  state: ROUTE
+  description: Secret Shop shortcut of the lobby's left column, its place there varies
+  region:
+  - 0
+  - 130
+  - 140
+  - 530
+- name: shop_secret_title
+  state: ROUTE
+  description: Secret Shop title at the top left of the shop
+  region:
+  - 50
+  - 8
+  - 175
+  - 52
+- name: shop_coin
+  state: ROUTE
+  description: gold coin left of a Secret Shop row's price, one per row
+  region:
+  - 1050
+  - 60
+  - 70
+  - 645
+- name: shop_refresh_popup
+  state: ROUTE
+  description: '"Use Skystone to refresh?" popup of the Secret Shop'
+  region:
+  - 500
+  - 290
+  - 290
+  - 70
+- name: shop_buy_popup
+  state: ROUTE
+  description: '"Would you like to purchase this product?" popup of the Secret Shop'
+  region:
+  - 430
+  - 205
+  - 420
+  - 70
+- name: shop_header_gold
+  state: ROUTE
+  description: gold coin of the Secret Shop's top bar, the gold is read right of it
+  region:
+  - 560
+  - 10
+  - 440
+  - 50
+- name: shop_header_skystone
+  state: ROUTE
+  description: skystone of the Secret Shop's top bar, the skystones are read right of it
+  region:
+  - 560
+  - 10
+  - 440
+  - 50
+- name: lobby_sanctuary
+  state: ROUTE
+  description: Sanctuary tower and label at the top of the lobby's left column
+  region:
+  - 0
+  - 120
+  - 140
+  - 120
+- name: battle_labyrinth
+  state: ROUTE
+  description: maze icon and "Labyrinth" title of the Battle page's Labyrinth card
+  region:
+  - 0
+  - 160
+  - 1280
+  - 80
+- name: labyrinth_tirel
+  state: ROUTE
+  description: artwork of the Tirel Castle in Chaos card in the Labyrinth list, wherever the list is scrolled
+  region:
+  - 1020
+  - 110
+  - 250
+  - 610
+- name: labyrinth_morale
+  state: ROUTE
+  description: smiley of the morale counter under the minimap, shown while walking a labyrinth (not in its fights)
+  region:
+  - 100
+  - 120
+  - 90
+  - 60
+- name: labyrinth_map_huche
+  state: ROUTE
+  description: Huche's shop pin on the labyrinth map of Tirel Castle's Hall of Silence
+  region:
+  - 0
+  - 0
+  - 900
+  - 720

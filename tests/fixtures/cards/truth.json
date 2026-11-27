@@ -1,0 +1,571 @@
+[
+ {
+  "image": "card_00.png",
+  "truth": {
+   "grade": "rare",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "crit_damage",
+     6.0
+    ],
+    [
+     "effect_resistance",
+     6.0
+    ]
+   ],
+   "set": "critical",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_01.png",
+  "truth": {
+   "grade": "heroic",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "health",
+     166.0
+    ],
+    [
+     "health_percent",
+     8.0
+    ],
+    [
+     "effectiveness",
+     4.0
+    ]
+   ],
+   "set": "hit",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_02.png",
+  "truth": {
+   "grade": "rare",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "health_percent",
+     5.0
+    ],
+    [
+     "attack_percent",
+     5.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_03.png",
+  "truth": {
+   "grade": "rare",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "crit_damage",
+     5.0
+    ],
+    [
+     "crit_chance",
+     3.0
+    ]
+   ],
+   "set": "hit",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_04.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "effect_resistance",
+     4.0
+    ],
+    [
+     "attack_percent",
+     7.0
+    ],
+    [
+     "crit_chance",
+     4.0
+    ],
+    [
+     "effectiveness",
+     6.0
+    ]
+   ],
+   "set": "critical",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_05.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "weapon",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "crit_damage",
+     7.0
+    ],
+    [
+     "effect_resistance",
+     5.0
+    ],
+    [
+     "speed",
+     4.0
+    ],
+    [
+     "effectiveness",
+     5.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_06.png",
+  "truth": {
+   "grade": "heroic",
+   "slot": "ring",
+   "level": 0,
+   "main": "defense",
+   "subs": [
+    [
+     "effect_resistance",
+     4.0
+    ],
+    [
+     "crit_chance",
+     4.0
+    ],
+    [
+     "effectiveness",
+     5.0
+    ]
+   ],
+   "set": "injury",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_07.png",
+  "truth": {
+   "grade": "heroic",
+   "slot": "ring",
+   "level": 0,
+   "main": "health",
+   "subs": [
+    [
+     "effectiveness",
+     4.0
+    ],
+    [
+     "attack",
+     36.0
+    ],
+    [
+     "effect_resistance",
+     4.0
+    ]
+   ],
+   "set": "penetration",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_08.png",
+  "truth": {
+   "grade": "heroic",
+   "slot": "boots",
+   "level": 0,
+   "main": "attack",
+   "subs": [
+    [
+     "health_percent",
+     6.0
+    ],
+    [
+     "defense",
+     27.0
+    ],
+    [
+     "attack_percent",
+     6.0
+    ]
+   ],
+   "set": "health",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_09.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "ring",
+   "level": 0,
+   "main": "attack_percent",
+   "subs": [
+    [
+     "health_percent",
+     5.0
+    ],
+    [
+     "speed",
+     3.0
+    ],
+    [
+     "crit_chance",
+     3.0
+    ],
+    [
+     "crit_damage",
+     6.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_10.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "necklace",
+   "level": 0,
+   "main": "crit_damage",
+   "subs": [
+    [
+     "attack_percent",
+     6.0
+    ],
+    [
+     "health_percent",
+     6.0
+    ],
+    [
+     "speed",
+     3.0
+    ],
+    [
+     "crit_chance",
+     4.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_11.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "boots",
+   "level": 0,
+   "main": "speed",
+   "subs": [
+    [
+     "attack_percent",
+     5.0
+    ],
+    [
+     "health_percent",
+     6.0
+    ],
+    [
+     "crit_chance",
+     3.0
+    ],
+    [
+     "crit_damage",
+     6.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_12.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "ring",
+   "level": 0,
+   "main": "health_percent",
+   "subs": [
+    [
+     "defense_percent",
+     8.0
+    ],
+    [
+     "effectiveness",
+     6.0
+    ],
+    [
+     "crit_damage",
+     7.0
+    ],
+    [
+     "defense",
+     34.0
+    ]
+   ],
+   "set": "weakening",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_13.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "ring",
+   "level": 0,
+   "main": "defense_percent",
+   "subs": [
+    [
+     "attack",
+     39.0
+    ],
+    [
+     "speed",
+     3.0
+    ],
+    [
+     "defense",
+     30.0
+    ],
+    [
+     "crit_chance",
+     3.0
+    ]
+   ],
+   "set": "weakening",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_14.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "ring",
+   "level": 0,
+   "main": "effectiveness",
+   "subs": [
+    [
+     "defense_percent",
+     5.0
+    ],
+    [
+     "crit_damage",
+     5.0
+    ],
+    [
+     "health",
+     189.0
+    ],
+    [
+     "effect_resistance",
+     8.0
+    ]
+   ],
+   "set": "weakening",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_15.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "helmet",
+   "level": 9,
+   "main": "health",
+   "subs": [
+    [
+     "speed",
+     3.0
+    ],
+    [
+     "crit_chance",
+     3.0
+    ],
+    [
+     "attack",
+     76.0
+    ],
+    [
+     "effectiveness",
+     21.0
+    ]
+   ],
+   "set": "weakening",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_e00.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "weapon",
+   "level": 15,
+   "main": "attack",
+   "subs": [
+    [
+     "crit_damage",
+     21.0
+    ],
+    [
+     "effect_resistance",
+     5.0
+    ],
+    [
+     "speed",
+     13.0
+    ],
+    [
+     "effectiveness",
+     5.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_e01.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "necklace",
+   "level": 15,
+   "main": "crit_damage",
+   "subs": [
+    [
+     "attack_percent",
+     17.0
+    ],
+    [
+     "health_percent",
+     16.0
+    ],
+    [
+     "speed",
+     6.0
+    ],
+    [
+     "crit_chance",
+     4.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_e02.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "boots",
+   "level": 15,
+   "main": "speed",
+   "subs": [
+    [
+     "attack_percent",
+     10.0
+    ],
+    [
+     "health_percent",
+     26.0
+    ],
+    [
+     "crit_chance",
+     8.0
+    ],
+    [
+     "crit_damage",
+     6.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_e03.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "helmet",
+   "level": 15,
+   "main": "health",
+   "subs": [
+    [
+     "attack_percent",
+     6.0
+    ],
+    [
+     "speed",
+     3.0
+    ],
+    [
+     "crit_chance",
+     17.0
+    ],
+    [
+     "crit_damage",
+     18.0
+    ]
+   ],
+   "set": "speed",
+   "locked": false
+  }
+ },
+ {
+  "image": "card_e04.png",
+  "truth": {
+   "grade": "epic",
+   "slot": "ring",
+   "level": 15,
+   "main": "health_percent",
+   "subs": [
+    [
+     "defense_percent",
+     20.0
+    ],
+    [
+     "effectiveness",
+     14.0
+    ],
+    [
+     "crit_damage",
+     11.0
+    ],
+    [
+     "defense",
+     66.0
+    ]
+   ],
+   "set": "weakening",
+   "locked": false
+  }
+ }
+]
